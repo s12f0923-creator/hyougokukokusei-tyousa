@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>兵庫区国勢調査 受付審査日予約</title>
+  <style>
+    * { box-sizing: border-box; }
+    html { -webkit-text-size-adjust: 100%; }
+    body {
+      font-family: "Yu Gothic", "Hiragino Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      background: linear-gradient(to bottom right, #f0f4f8, #e0e7ef);
+      margin: 0;
+      padding: 16px;
+      text-align: center;
+    }
+    h1 { font-size: 1.8em; margin: 0 0 0.25em; }
+    h2 { font-size: 1.2em; margin: 0 0 1em; color: #555; }
+
+    .container { max-width: 720px; margin: 0 auto; }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      background: #fff;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      border-radius: 10px;
+      overflow: hidden;
+      table-layout: fixed; /* 列幅計算を固定 */
+    }
+
+    /* 列幅を7等分で明示 */
+    colgroup > col { width: 14.2857%; }
+    th, td { width: 14.2857%; }
+
+    thead th {
+      padding: 12px 8px;
+      background: #f8f9fa;
+      color: #666;
+      border-bottom: 1px solid #ccc;
+      border-right: 1px solid #ddd;
+      font-weight: 600;
+      text-align: center;
+    }
+    thead th:last-child { border-right: none; }
+
+    tbody td {
+      border-right: 1px solid #eee;
+      border-top: 1px solid #eee;
+      color: #333;
+      text-align: center;
+      vertical-align: middle;
+      height: 54px;             /* コンテンツを絶対配置するため高さを確保 */
+      padding: 0;               /* 余白は内部要素で付与 */
+      position: relative;       /* 絶対配置の基準 */
+      overflow: hidden;         /* はみ出し防止 */
+    }
+    tbody td:last-child { border-right: none; }
+
+    /* --- セル内コンテンツを統一（リンク/非リンクとも） --- */
+    /* 非リンク（テキスト）用 */
+    td .cellbtn {
+      position: absolute;
+      inset: 6px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 6px;
+      padding: 0 6px;          /* わずかに余白。狭幅でも切れにくい */
+      line-height: 1;          /* 余計な上下余白を抑制 */
+      background: transparent;
+      color: inherit;
+      text-align: center;
+      white-space: nowrap;     /* 1～2文字が縦並びにならないように */
+    }
+
+    /* リンク（ボタン）用 */
+    td.linkcell a {
+      position: absolute;
+      inset: 6px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 6px;
+      padding: 0 6px;
+      background: #0078d4;
+      color: #fff;
+      text-decoration: none;
+      line-height: 1;
+      text-align: center;
+      white-space: nowrap;
+      z-index: 1;
+    }
+    td.linkcell a:hover { background: #005a9e; }
+    td.linkcell a:active { background: #004b82; }
+
+    /* 日・土・祝の色（td にクラスで付与） */
+    td.sunday   .cellbtn { color: red; }
+    td.saturday .cellbtn { color: #0078d4; }
+
+    /* モバイル調整 */
+    @media (max-width: 480px) {
+      thead th { padding: 10px 6px; font-size: 0.95em; }
+      tbody td { height: 50px; }
+      td .cellbtn, td.linkcell a { inset: 5px; font-size: 0.95em; }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>兵庫区国勢調査 受付審査日予約</h1>
+    <h2>2025年11月</h2>
+
+    <table>
+      <colgroup>
+        <col span="7" />
+      </colgroup>
+      <thead>
+        <tr>
+          <th class="sunday">日</th>
+          <th>月</th>
+          <th>火</th>
+          <th>水</th>
+          <th>木</th>
+          <th>金</th>
+          <th class="saturday">土</th>
+        </tr>
+      </thead>
+      <tbody>
+        <!-- 1週目（1日は土曜日） -->
+        <tr>
+          <td><span class="cellbtn"></span></td>
+          <td><span class="cellbtn"></span></td>
+          <td><span class="cellbtn"></span></td>
+          <td><span class="cellbtn"></span></td>
+          <td><span class="cellbtn"></span></td>
+          <td><span class="cellbtn"></span></td>
+          <td class="saturday"><span class="cellbtn">1日</span></td>
+        </tr>
+
+        <!-- 2週目：2(日)〜8(土) -->
+        <tr>
+          <td class="sunday"><span class="cellbtn">2日</span></td>
+          <td class="sunday"><span class="cellbtn">3日</span></td>
+          <td class="linkcell"><a href="https://event.city.kobe.lg.jp/event/aWKCoVWaRtiiGGhqSqpU" aria-label="11月4日を予約">4日</a></td>
+          <td class="linkcell"><a href="https://example.com/reserve/20251104" aria-label="11月5日を予約">5日</a></td>
+          <td class="linkcell"><a href="https://example.com/reserve/20251104" aria-label="11月6日を予約">6日</a></td>
+          <td class="linkcell"><a href="https://example.com/reserve/20251104" aria-label="11月7日を予約">7日</a></td>
+          <td class="linkcell"><a href="https://example.com/reserve/20251104" aria-label="11月8日を予約">8日</a></td>
+        </tr>
+
+        <!-- 3週目：9(日)〜15(土) -->
+        <tr>
+          <td class="linkcell"><a href="https://example.com/reserve/20251104" aria-label="11月9日を予約">9日</a></td>
+          <td class="linkcell"><a href="https://example.com/reserve/20251104" aria-label="11月10日を予約">10日</a></td>
+          <td class="linkcell"><a href="https://example.com/reserve/20251104" aria-label="11月11日を予約">11日</a></td>
+          <td class="linkcell"><a href="https://example.com/reserve/20251104" aria-label="11月12日を予約">12日</a></td>
+          <td class="linkcell"><a href="https://example.com/reserve/20251104" aria-label="11月13日を予約">13日</a></td>
+          <td class="linkcell"><a href="https://example.com/reserve/20251104" aria-label="11月14日を予約">14日</a></td>
+          <td class="saturday"><span class="cellbtn">15日</span></td>
+        </tr>
+
+        <!-- 4週目：16(日)〜22(土) -->
+        <tr>
+          <td class="sunday"><span class="cellbtn">16日</span></td>
+          <td><span class="cellbtn">17日</span></td>
+          <td><span class="cellbtn">18日</span></td>
+          <td><span class="cellbtn">19日</span></td>
+          <td><span class="cellbtn">20日</span></td>
+          <td><span class="cellbtn">21日</span></td>
+          <td class="saturday"><span class="cellbtn">22日</span></td>
+        </tr>
+
+        <!-- 5週目：23(日)〜29(土) -->
+        <tr>
+          <td class="sunday"><span class="cellbtn">23日</span></td>
+          <td class="sunday"><span class="cellbtn">24日</span></td>
+          <td><span class="cellbtn">25日</span></td>
+          <td><span class="cellbtn">26日</span></td>
+          <td><span class="cellbtn">27日</span></td>
+          <td><span class="cellbtn">28日</span></td>
+          <td class="saturday"><span class="cellbtn">29日</span></td>
+        </tr>
+
+        <!-- 6週目：30(日)のみ -->
+        <tr>
+          <td class="sunday"><span class="cellbtn">30日</span></td>
+          <td><span class="cellbtn"></span></td>
+          <td><span class="cellbtn"></span></td>
+          <td><span class="cellbtn"></span></td>
+          <td><span class="cellbtn"></span></td>
+          <td><span class="cellbtn"></span></td>
+          <td class="saturday"><span class="cellbtn"></span></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- JS: 全リンクを新規タブで開く -->
+  <script>
+    try {
+      document.querySelectorAll('td.linkcell a').forEach(function(a){
+        a.setAttribute('target','_blank');
+        a.setAttribute('rel','noopener noreferrer');
+      });
+    } catch(e) {}
+  </script>
+</body>
+</html>
